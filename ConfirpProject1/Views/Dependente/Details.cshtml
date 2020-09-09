@@ -1,0 +1,42 @@
+﻿@model ConfirpProject1.T_DEPENDENTE
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalhes do dependente</h2>
+
+<div>
+    <h4>T_DEPENDENTE</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nm_dependente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nm_dependente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dt_nascimento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dt_nascimento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.T_FUNCIONARIO.nm_funcionario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.T_FUNCIONARIO.nm_funcionario)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.id_dependente }) |
+    @Html.ActionLink("Retornar à lista", "Index")
+</p>

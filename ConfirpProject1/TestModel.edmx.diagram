@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5e47028220974e078723a350011f1ade" Name="Diagram1">
+        <EntityTypeShape EntityType="ConfirpProjectDBModel.T_DEPENDENTE" Width="1.875" PointX="3.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConfirpProjectDBModel.T_FUNCIONARIO" Width="1.875" PointX="0.75" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="ConfirpProjectDBModel.FK__T_DEPENDE__id_fu__3B75D760" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

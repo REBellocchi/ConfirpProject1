@@ -1,0 +1,43 @@
+﻿@model IEnumerable<ConfirpProject1.T_FUNCIONARIO>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Índice - Funcionários</h2>
+
+<p>
+    @Html.ActionLink("Registrar novo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nm_funcionario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dt_nascimento)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nm_funcionario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dt_nascimento)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.id_funcionario }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.id_funcionario }) |
+            @Html.ActionLink("Excluir", "Delete", new { id=item.id_funcionario })
+        </td>
+    </tr>
+}
+
+</table>
+
+<div>
+    @Html.ActionLink("Acessar registros dos dependentes", "../Dependente/Index")
+</div>

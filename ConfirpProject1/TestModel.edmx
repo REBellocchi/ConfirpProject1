@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ConfirpProjectDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="T_DEPENDENTE">
+          <Key>
+            <PropertyRef Name="id_dependente" />
+          </Key>
+          <Property Name="id_dependente" Type="int" Nullable="false" />
+          <Property Name="nm_dependente" Type="varchar" MaxLength="32" Nullable="false" />
+          <Property Name="dt_nascimento" Type="date" Nullable="false" />
+          <Property Name="id_funcionario" Type="int" />
+        </EntityType>
+        <EntityType Name="T_FUNCIONARIO">
+          <Key>
+            <PropertyRef Name="id_funcionario" />
+          </Key>
+          <Property Name="id_funcionario" Type="int" Nullable="false" />
+          <Property Name="nm_funcionario" Type="varchar" MaxLength="32" Nullable="false" />
+          <Property Name="dt_nascimento" Type="date" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__T_DEPENDE__id_fu__3B75D760">
+          <End Role="T_FUNCIONARIO" Type="Self.T_FUNCIONARIO" Multiplicity="0..1" />
+          <End Role="T_DEPENDENTE" Type="Self.T_DEPENDENTE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_FUNCIONARIO">
+              <PropertyRef Name="id_funcionario" />
+            </Principal>
+            <Dependent Role="T_DEPENDENTE">
+              <PropertyRef Name="id_funcionario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ConfirpProjectDBModelStoreContainer">
+          <EntitySet Name="T_DEPENDENTE" EntityType="Self.T_DEPENDENTE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_FUNCIONARIO" EntityType="Self.T_FUNCIONARIO" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__T_DEPENDE__id_fu__3B75D760" Association="Self.FK__T_DEPENDE__id_fu__3B75D760">
+            <End Role="T_FUNCIONARIO" EntitySet="T_FUNCIONARIO" />
+            <End Role="T_DEPENDENTE" EntitySet="T_DEPENDENTE" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ConfirpProjectDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="T_DEPENDENTE">
+          <Key>
+            <PropertyRef Name="id_dependente" />
+          </Key>
+          <Property Name="id_dependente" Type="Int32" Nullable="false" />
+          <Property Name="nm_dependente" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="dt_nascimento" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="id_funcionario" Type="Int32" />
+          <NavigationProperty Name="T_FUNCIONARIO" Relationship="Self.FK__T_DEPENDE__id_fu__3B75D760" FromRole="T_DEPENDENTE" ToRole="T_FUNCIONARIO" />
+        </EntityType>
+        <EntityType Name="T_FUNCIONARIO">
+          <Key>
+            <PropertyRef Name="id_funcionario" />
+          </Key>
+          <Property Name="id_funcionario" Type="Int32" Nullable="false" />
+          <Property Name="nm_funcionario" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="dt_nascimento" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="T_DEPENDENTE" Relationship="Self.FK__T_DEPENDE__id_fu__3B75D760" FromRole="T_FUNCIONARIO" ToRole="T_DEPENDENTE" />
+        </EntityType>
+        <Association Name="FK__T_DEPENDE__id_fu__3B75D760">
+          <End Role="T_FUNCIONARIO" Type="Self.T_FUNCIONARIO" Multiplicity="0..1" />
+          <End Role="T_DEPENDENTE" Type="Self.T_DEPENDENTE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_FUNCIONARIO">
+              <PropertyRef Name="id_funcionario" />
+            </Principal>
+            <Dependent Role="T_DEPENDENTE">
+              <PropertyRef Name="id_funcionario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ConfirpProjectDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="T_DEPENDENTE" EntityType="Self.T_DEPENDENTE" />
+          <EntitySet Name="T_FUNCIONARIO" EntityType="Self.T_FUNCIONARIO" />
+          <AssociationSet Name="FK__T_DEPENDE__id_fu__3B75D760" Association="Self.FK__T_DEPENDE__id_fu__3B75D760">
+            <End Role="T_FUNCIONARIO" EntitySet="T_FUNCIONARIO" />
+            <End Role="T_DEPENDENTE" EntitySet="T_DEPENDENTE" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ConfirpProjectDBModelStoreContainer" CdmEntityContainer="ConfirpProjectDBEntities">
+          <EntitySetMapping Name="T_DEPENDENTE">
+            <EntityTypeMapping TypeName="ConfirpProjectDBModel.T_DEPENDENTE">
+              <MappingFragment StoreEntitySet="T_DEPENDENTE">
+                <ScalarProperty Name="id_dependente" ColumnName="id_dependente" />
+                <ScalarProperty Name="nm_dependente" ColumnName="nm_dependente" />
+                <ScalarProperty Name="dt_nascimento" ColumnName="dt_nascimento" />
+                <ScalarProperty Name="id_funcionario" ColumnName="id_funcionario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_FUNCIONARIO">
+            <EntityTypeMapping TypeName="ConfirpProjectDBModel.T_FUNCIONARIO">
+              <MappingFragment StoreEntitySet="T_FUNCIONARIO">
+                <ScalarProperty Name="id_funcionario" ColumnName="id_funcionario" />
+                <ScalarProperty Name="nm_funcionario" ColumnName="nm_funcionario" />
+                <ScalarProperty Name="dt_nascimento" ColumnName="dt_nascimento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

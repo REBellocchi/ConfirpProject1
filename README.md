@@ -1,5 +1,4 @@
-## ConfirpProject1
-Aplicação Web desenvolvida como parte do processo seletivo da empresa CONFIRP em setembro/2020 para a vaga de programador trainee.
+## C#, ASP.NET, Entity Framework, SQL Server
 
 Objetivo:
 * Construir uma aplicação utilizando as linguagens C# e SQL, e o framework .Net para acessar um banco de dado relacional e demonstrar funcionalidades básicas (CRUD - Create, Read, Update, Delete).
@@ -13,12 +12,12 @@ Ferramentas utilizadas:
 
 Processo:
 * Base de dados criada com duas tabelas simples e funcionais que representam os funcionários de uma empresa fictícia e seus dependentes, como num registro do departamento de RH.
-* Projeto criado com o template ASP.NET Web Application, Entity Framework, padrão MVC, configurado com um servidor local (localhost).
+* Projeto criado com o template ASP.NET Web Application, Entity Framework, padrão MVC.
 
 Como executar:
-* Importar o backup da base de dados no MS SQL Server Management Studio: Databases -> Restore Database… -> selecionar arquivo “ConfirpProjectDB.bak”.
-* Criar e popular as tabelas no MS SQL Server Management Studio: abrir o arquivo “ConfirpProject-SQLQuery” e executar as queries. Alguns exemplos de Stored Procedures demonstram operações de “Inner Join” entre as tabelas.
-* Importar a pasta do projeto “ConfirpProject1” pelo Visual Studio. Rodar o arquivo “RouteConfig.cs” (App_Start/RouteConfig.cs) com o IIS Express.
+* Importar o backup da base de dados no MS SQL Server Management Studio: Databases -> Restore Database… -> selecionar arquivo “FuncionarioDependenteDB.bak”.
+* Criar e popular as tabelas no MS SQL Server Management Studio: abrir o arquivo “FuncionarioDependente-SQLQuery” e executar as queries. Alguns exemplos de Stored Procedures demonstram operações de “Inner Join” entre as tabelas.
+* Importar a pasta do projeto “FuncionarioDependente” pelo Visual Studio. Rodar o arquivo “RouteConfig.cs” (App_Start/RouteConfig.cs) com o IIS Express.
 
 Limitação:
 * A solução proposta não considera a possibilidade de dois funcionários da empresa serem registrados como responsáveis ao mesmo tempo de um ou mais dependentes (por exemplo: um casal que trabalha na mesma empresa e tem um dependente em comum). Uma solução alternativa seria modelar as tabelas com uma relação de “muitos-para-muitos” e criar uma nova tabela intermediária (“join table”).

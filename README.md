@@ -1,5 +1,4 @@
-## ConfirpProject1
-Aplicação Web desenvolvida como parte do processo seletivo da empresa CONFIRP em setembro/2020 para a vaga de programador trainee.
+## C#, .Net, SQL Server
 
 Objetivo:
 * Construir uma aplicação utilizando as linguagens C# e SQL, e o framework .Net para acessar um banco de dado relacional e demonstrar funcionalidades básicas (CRUD - Create, Read, Update, Delete).
@@ -12,8 +11,8 @@ Ferramentas utilizadas:
 * .Net Framework (4.7.2)
 
 Processo:
-* Base de dados criada com duas tabelas simples e funcionais que representam os funcionários de uma empresa fictícia e seus dependentes, como num registro do departamento de RH.
-* Projeto criado com o template ASP.NET Web Application, Entity Framework, padrão MVC, configurado com um servidor local (localhost).
+* Base de dados criada com duas tabelas que representam os funcionários de uma empresa fictícia e seus dependentes, como num registro do departamento de RH.
+* Projeto criado com o template ASP.NET Web Application, Entity Framework, padrão MVC.
 
 Como executar:
 * Importar o backup da base de dados no MS SQL Server Management Studio: Databases -> Restore Database… -> selecionar arquivo “ConfirpProjectDB.bak”.
